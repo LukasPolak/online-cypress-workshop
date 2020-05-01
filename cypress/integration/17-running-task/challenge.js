@@ -3,15 +3,12 @@
   don’t worry, if you just copy/paste stuff, you are learning this way
   too! if you feel like experimenting, try to change some details 
   about the task, or write your own
-*/ 
+*/
+
 it('resets database before opening app', () => {
+  cy.task('resetDatabase');
 
-  cy
-    .task('resetDatabase');
-
-  cy
-    .visit('localhost:3000');
-  
+  cy.visit('localhost:3000');
 });
 
 /* 
@@ -20,9 +17,9 @@ it('resets database before opening app', () => {
   and other when cypress opens browser. e.g. you can make your devtools
   open automatically when running cypress. I tweeted about that here:
   https://twitter.com/filip_hric/status/1240700715854487553
-*/ 
+*/
 
 /* 
   🔥 challenge #3: if you are on fire, try to create a task that will 
   seed a database and will take json object as an argument
-*/ 
+*/

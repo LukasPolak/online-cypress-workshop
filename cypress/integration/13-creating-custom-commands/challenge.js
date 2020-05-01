@@ -5,17 +5,13 @@
   as a function parameter, try to use the index number of 
   the todo item
 */
-it('deletes a todo', () => {
-  
-});
+it('deletes a todo', () => {});
 
 /* 
   👦 challenge #2: write a custom command for completing todo.
   as a function parameter, try to use the text of the todo item
 */
-it('completes a todo', () => {
-  
-});
+it('completes a todo', () => {});
 
 /* 
   👨 challenge #3: add previously created commands to commands.d.ts
@@ -29,6 +25,4 @@ it('completes a todo', () => {
   you can find  an example on how to do that in documentation: 
   https://on.cypress.io/cypress-log
 */
-it('completes a todo item', () => {
-  
-});
+it('completes a todo item', () => {});

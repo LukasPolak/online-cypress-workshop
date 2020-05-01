@@ -4,13 +4,10 @@
   ⚠️ remember you can run single test by using it.only
   📚 this challenge includes working with documentation. you can find it on https://docs.cypress.io, use https://on.cypress.io/<command> or find a command via autocomplete
   💡 there are additional in final.js file of this chapter which might help with this challenge
-*/ 
+*/
 
-beforeEach( () => {
-
-  cy
-    .visit('localhost:3000');
-
+beforeEach(() => {
+  cy.visit('localhost:3000');
 });
 
 /*
@@ -19,10 +16,7 @@ beforeEach( () => {
   ⚠️ before starting this test, make sure you have at least two todo items
 */
 it('Selects first item in list', () => {
-
-  cy
-    .get('.todo');
-  
+  cy.get('.todo');
 });
 
 /*
@@ -31,10 +25,7 @@ it('Selects first item in list', () => {
   ⚠️ before starting this test, make sure you have at least two todo items
 */
 it('Selects last item in list', () => {
-
-  cy
-    .get('.todo');
-  
+  cy.get('.todo');
 });
 
 /*
@@ -43,10 +34,7 @@ it('Selects last item in list', () => {
   ⚠️ before starting this test, have at least four items in to do list
 */
 it('Selects third todo item', () => {
-
-  cy
-    .get('.todo');
-  
+  cy.get('.todo');
 });
 
 /*
@@ -55,10 +43,7 @@ it('Selects third todo item', () => {
   by first geting .todo
 */
 it('Selects the first item and then the next or previous item', () => {
-  
-  cy
-    .get('.todo');
-
+  cy.get('.todo');
 });
 
 /* 
@@ -66,9 +51,5 @@ it('Selects the first item and then the next or previous item', () => {
   .get() command. make the test pass by adding todo item (as demonstrated on demo)
 */
 it('Has one element in todo list', () => {
-
-  cy
-    .get('.todo')
-    .should('have.length', 1);
-  
+  cy.get('.todo').should('have.length', 1);
 });

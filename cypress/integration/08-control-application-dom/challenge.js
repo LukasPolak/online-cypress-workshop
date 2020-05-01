@@ -4,13 +4,10 @@
   ⚠️ remember you can run single test by using it.only
   ⚠️ some of these test require you to have some todo items 
   already in app. you can probably figure out which these are 🙂
-*/ 
+*/
 
-beforeEach( () => {
-
-  cy
-    .visit('localhost:3000');
-
+beforeEach(() => {
+  cy.visit('localhost:3000');
 });
 
 /* 
@@ -18,21 +15,13 @@ beforeEach( () => {
   the ".destroy" element disappear
 */
 it('have delete icon', () => {
+  cy.get('.destroy').invoke('show');
 
-  cy
-    .get('.destroy')
-    .invoke('show');
-    
-  cy
-    .get('.destroy')
-    .should('be.visible');
+  cy.get('.destroy').should('be.visible');
 
   // add code here
 
-  cy
-    .get('.destroy')
-    .should('be.visible');
-  
+  cy.get('.destroy').should('be.visible');
 });
 
 /* 
@@ -40,14 +29,9 @@ it('have delete icon', () => {
   command. use devtools to look into event listeners on ".todo" item
 */
 it('deletes a todo item', () => {
+  cy.get('.todo');
 
-  cy
-    .get('.todo');
-    
-  cy
-    .get('.destroy')
-    .should('not.be.visible');
-  
+  cy.get('.destroy').should('not.be.visible');
 });
 
 /* 
@@ -56,11 +40,7 @@ it('deletes a todo item', () => {
   on how to do it
  */
 it('completes a todo item', () => {
-
-  cy
-    .get('.todo')
-    .invoke(); // add correct argument here
-  
+  cy.get('.todo').invoke(); // add correct argument here
 });
 
 /* 
@@ -69,9 +49,5 @@ it('completes a todo item', () => {
   value of the ".new-todo" element
 */
 it('add text into new todo field', () => {
-
-  cy
-    .get('.new-todo')
-    .invoke(); // add correct argument here
-  
+  cy.get('.new-todo').invoke(); // add correct argument here
 });

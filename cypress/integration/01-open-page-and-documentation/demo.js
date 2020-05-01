@@ -1,3 +1,1 @@
-it('visits todoMVC app', () => {
-  
-});
+it('visits todoMVC app', () => {});

@@ -7,30 +7,23 @@
   commands before you open your app, or more precisely - before 
   the request you want to route occurs. in case of GET /todos
   request, it is at the moment of opening our application
-*/ 
+*/
 
-beforeEach( () => {
-
-  cy
-    .visit('localhost:3000');
-
+beforeEach(() => {
+  cy.visit('localhost:3000');
 });
 
 /* 
   👶 challenge #1: stub GET /todos request to return 0 items. 
   you can do that manually or using a fixture
 */
-it('has 0 todo items', () => {
-  
-});
+it('has 0 todo items', () => {});
 
 /* 
   👧 challenge #2: create your own fixture and use it in your 
   test. try to include a compled todo item too
 */
-it('has n todo items (loaded from fixture)', () => {
-  
-});
+it('has n todo items (loaded from fixture)', () => {});
 
 /* 
   👩 challenge #3: recreate the scenario from demo and write a test
@@ -38,11 +31,7 @@ it('has n todo items (loaded from fixture)', () => {
   code 500
 */
 it('shows error when adding new item', () => {
-
-  cy
-    .get('.new-todo')
-    .type('buy milk{enter}');
-  
+  cy.get('.new-todo').type('buy milk{enter}');
 });
 
 /* 
@@ -50,9 +39,5 @@ it('shows error when adding new item', () => {
   it will create a completed todo item instead of incomplete one
 */
 it('creates completed todo item', () => {
-
-  cy
-    .get('.new-todo')
-    .type('buy milk{enter}');
-  
+  cy.get('.new-todo').type('buy milk{enter}');
 });

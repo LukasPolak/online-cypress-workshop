@@ -1,13 +1,10 @@
 /// <reference types="cypress" />
 
 it('gets input element', () => {
-
-  cy
-    .visit('localhost:3000');
+  cy.visit('localhost:3000');
 
   // select via tag
-  cy
-    .get('input'); 
+  cy.get('input');
 
   // select via id
 
@@ -16,5 +13,4 @@ it('gets input element', () => {
   // select via attribute
 
   // select via relation
-
 });

@@ -3,23 +3,17 @@
 /* 
   ⚠️ remember you can run single test by using it.only
   📚 I encourage you to use cypress documentation, especially https://on.cypress.io/assertions
-*/ 
+*/
 
-beforeEach( () => {
-
-  cy
-    .visit('localhost:3000');
-
+beforeEach(() => {
+  cy.visit('localhost:3000');
 });
 
 /*
   👶 challenge #1: check the text using .then() command
 */
 it('Checks a text todo item', () => {
-
-  cy
-    .get('.todo');
-  
+  cy.get('.todo');
 });
 
 /*
@@ -27,10 +21,7 @@ it('Checks a text todo item', () => {
   ⚠️ make sure you have some todo items in the list before you start this test
 */
 it('Checks a texts of all todo items', () => {
-
-  cy
-    .get('.todo');
-  
+  cy.get('.todo');
 });
 
 /* 
@@ -39,10 +30,7 @@ it('Checks a texts of all todo items', () => {
   ⚠️ make sure you have some todo items in the list before you start this test
 */
 it('Checks a texts of first and last todo items', () => {
-
-  cy
-    .get('.todo');
-  
+  cy.get('.todo');
 });
 
 /* 
@@ -52,12 +40,7 @@ it('Checks a texts of first and last todo items', () => {
    it is not in the first position
 */
 it('Has first todo item with text "wash dishes"', () => {
-
-  cy
-    .get('.todo')
-    .eq(0)
-    .should('contain.text', 'wash dishes');
-  
+  cy.get('.todo').eq(0).should('contain.text', 'wash dishes');
 });
 
 /* 
@@ -66,14 +49,8 @@ it('Has first todo item with text "wash dishes"', () => {
   test to examine how using .should() command works when using function
 */
 it('Have two todo items with particular texts', () => {
-
-  cy
-    .get('.todo', {timeout: 30000})
-    .should( items => {
-
-      // check item 1
-      // check item 2
-
-    });
-  
+  cy.get('.todo', { timeout: 30000 }).should((items) => {
+    // check item 1
+    // check item 2
+  });
 });

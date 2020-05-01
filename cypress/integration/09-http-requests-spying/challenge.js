@@ -12,33 +12,24 @@
   0 todo items. it may be annoying at this point, but good news 
   is that in following chapters, we will learn how to reset our 
   app so we always start in the desired state 😎
-*/ 
+*/
 
-beforeEach( () => {
-
-  cy
-    .visit('localhost:3000');
-
+beforeEach(() => {
+  cy.visit('localhost:3000');
 });
 
 /* 
   👶 challenge #1: create a test that checks that GET /todos 
   returns status 200
 */
-it('retreives a list of todo items', () => {
-  
-});
+it('retreives a list of todo items', () => {});
 
 /* 
   👦 challenge #2: create a test that checks that POST /todos 
   returns correct todo text
 */
 it('creates a todo item', () => {
-
-  cy
-    .get('.new-todo')
-    .type('buy milk{enter}');
-  
+  cy.get('.new-todo').type('buy milk{enter}');
 });
 
 /* 
@@ -47,11 +38,7 @@ it('creates a todo item', () => {
   text of the todo
 */
 it('creates a todo item', () => {
-
-  cy
-    .get('.new-todo')
-    .type('buy milk{enter}');
-  
+  cy.get('.new-todo').type('buy milk{enter}');
 });
 
 /* 
@@ -59,15 +46,9 @@ it('creates a todo item', () => {
   when a todo item is completed
 */
 it('completes a todo item', () => {
+  cy.get('.new-todo').type('buy milk{enter}');
 
-  cy
-    .get('.new-todo')
-    .type('buy milk{enter}');
-
-  cy
-    .get('.toggle')
-    .click();
-  
+  cy.get('.toggle').click();
 });
 
 /* 
@@ -77,16 +58,9 @@ it('completes a todo item', () => {
   https://on.cypress.io/wait#You-can-pass-an-array-of-aliases-that-will-be-waited-on-before-resolving
 */
 it('completes a todo item', () => {
+  cy.get('.new-todo').type('buy milk{enter}');
 
-  cy
-    .get('.new-todo')
-    .type('buy milk{enter}');
+  cy.get('.new-todo').type('wash dishes{enter}');
 
-  cy
-    .get('.new-todo')
-    .type('wash dishes{enter}');
-
-  cy
-    .wait(); // wait for both requests and make assertions on titles
-  
+  cy.wait(); // wait for both requests and make assertions on titles
 });

@@ -1,9 +1,5 @@
 /// <reference types="cypress" />
 
-it('Test one', () => {
-  
-});
-    
-it('Test two', () => {
-      
-});
+it('Test one', () => {});
+
+it('Test two', () => {});
