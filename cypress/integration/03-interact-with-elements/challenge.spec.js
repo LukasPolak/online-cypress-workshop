@@ -8,25 +8,34 @@
   💡 don’t forget about documentation https://docs.cypress.io
 */
 
+beforeEach(() => {
+  cy.request('DELETE', 'localhost:3000/todos');
+
+  cy.visit('localhost:3000');
+  cy.get('input').type('buy milk{enter}');
+});
+
 /*
   👶 challenge #1: create one todo item 
 */
 it('creates a todo item', () => {
-  cy.visit('localhost:3000');
+  cy.get('.todo').should('exist');
 });
 
 /* 
   👧 challenge #2: check off a todo item 
 */
 it('completes a todo item (using .click() command)', () => {
-  cy.visit('localhost:3000');
+  cy.get('.todo input').click();
+  cy.get('.todo.completed').should('exist');
 });
 
 /* 
   👩 challenge #3: check off a todo item using .check() command (docs at http://on.cypress.io/check)
 */
 it('completes a todo item (using .check() command)', () => {
-  cy.visit('localhost:3000');
+  cy.get('.todo input').check();
+  cy.get('.todo.completed').should('exist');
 });
 
 /*
@@ -34,7 +43,10 @@ it('completes a todo item (using .check() command)', () => {
   command (docs at http://on.cypress.io/uncheck)
 */
 it('marks a todo item as not completed (using .uncheck() command)', () => {
-  cy.visit('localhost:3000');
+  cy.get('.todo input').check();
+  cy.get('.todo.completed').should('exist');
+  cy.get('.todo input').uncheck();
+  cy.get('.todo.completed').should('not.exist');
 });
 
 /*
@@ -42,5 +54,5 @@ it('marks a todo item as not completed (using .uncheck() command)', () => {
   word "milk" first, then move with arrows, then type "buy" and add item
 */
 it('creates a todo item with the text "buy milk"', () => {
-  cy.visit('localhost:3000');
+  cy.contains('buy milk');
 });
