@@ -7,10 +7,14 @@ it('gets input element', () => {
   cy.get('input');
 
   // select via id
+  cy.get('#add-todo');
 
   // select via class
+  cy.get('.new-todo');
 
   // select via attribute
+  cy.get('[placeholder="What needs to be done?"]');
 
   // select via relation
+  cy.get('.todoapp input');
 });
