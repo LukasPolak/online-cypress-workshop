@@ -1,6 +1,7 @@
 /// <reference types="cypress" />
 
 beforeEach(() => {
+  cy.request('DELETE', 'localhost:3000/todos');
   cy.visit('localhost:3000');
 });
 
